@@ -1,14 +1,29 @@
 .tasklist {
   padding: 8px;
-  background-color: #5797b9;
-  border-radius: 2px;
+  background-color: #ffff;
+  border-radius: 6px;
+  box-shadow: 0px 2px 26px #d2d2d2;
 }
 
 .tasklist .title {
   padding: 4px;
   font-weight: bold;
-  background-color: rgb(0, 0, 0, 0.1);
   text-align: center;
+  margin: -8px;
+  border-radius: 6px 6px 0 0;
+  color: #fff;
+}
+
+.tasklist .title-pendente {
+  background-color: #ffc107;
+}
+
+.tasklist .title-trabalhando {
+  background-color: #03a9f4;
+}
+
+.tasklist .title-resolvida {
+  background-color: #009688;
 }
 
 .tasklist .content {

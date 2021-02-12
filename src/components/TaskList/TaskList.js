@@ -1,5 +1,7 @@
 import React from "react";
 import "./tasklist.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 import TaskItem from "../TaskItem/TaskItem";
 
@@ -17,7 +19,19 @@ export default function TaskList({
 
   return (
     <div className="tasklist">
-      <div className="title">{title}</div>
+      <div
+        className={
+          title === "Pendente"
+            ? "title-pendente title"
+            : "" || title === "Trabalhando"
+            ? "title-trabalhando title"
+            : "" || title === "Resolvida"
+            ? "title-resolvida title"
+            : ""
+        }
+      >
+        {title}
+      </div>
       <div className="content">
         {tasks.map((task) => {
           return (
@@ -32,7 +46,9 @@ export default function TaskList({
           );
         })}
       </div>
-      <button onClick={addTask}>Adicionar Tarefa</button>
+      <button className="btn btn-sm btn-light" onClick={addTask}>
+        <FontAwesomeIcon icon={faPlus} />
+      </button>
     </div>
   );
 }
